@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body>
+    <section>
+        <h1>회원가입</h1>
+        <form action="#" method="post">
+            <fieldset>
+                <legend>회원가입양식</legend>
+            <dl>
+                <dt><label for="userId">아이디</label></dt>
+                <dd>
+                    <input type="text" id="userId" maxlength="12" required>
+                    <span>아이디는 12자 이내로 입력해 주세요.</span>
+                    <input type="button" value="아이디중복확인">
+                </dd>
+                <dt><label for="userPw">비밀번호</label></dt>
+                <dd>
+                    <input type="text" id="userPw">
+                </dd>
+                <dt><label for="userInfo">자기소개</label></dt>
+                <dd>
+                    <textarea name="userInfo" id="userInfo" cols="60" rows="10" placeholder="300자 이내로 작성해주세요."></textarea>
+                </dd>
+                <dt>성별</dt>
+                <dd>
+                    <label><input type="radio" name="people" checked>남</label>
+                    <label><input type="radio" name="people">여</label>
+                </dd>
+                <dt><label for="userEmail">이메일주소</label></dt>
+                <dd>
+                    <input type="email" id="userEmail">
+                </dd>
+                <dt>이메일수신허용</dt>
+                <dd>
+                    <lable><input type="radio" name="yes" checked>허용</lable>
+                    <lable><input type="radio" name="yes">거부</lable>
+                </dd>
+                <dt>직업</dt>
+                <dd>
+                    <label for="job"></label>
+                    <select id="job">
+                        <option value="선택">선택</option>
+                        <option value="주부">주부</option>
+                        <option value="회사원">회사원</option>
+                        <option value="학생">학생</option>
+                        <option value="기타">기타</option>
+                    </select>
+                </dd>
+                <dt>관심사</dt>
+                <dd>
+                    <label>
+						<input type="checkbox">연예인</label>
+					<label>
+						<input type="checkbox" checked>요리</label>
+					<label>
+						<input type="checkbox">다이어트</label>
+					<label>
+						<input type="checkbox">게임</label>
+                </dd>
+                <dt>사진업로드</dt>
+                <dd>
+                    <label for="userPhoto"></label>
+                    <input type="file" id="userPhoto">
+                </dd>
+            </dl>
+            </fieldset>
+        </form>
+    </section>
+    <p>
+        <button type="submit">정보저장</button>
+        <button type="reset">다시쓰기</button>
+    </p>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<title>input 요소</title>
+	<style>
+		section {
+			width: 800px;
+			margin: 0 auto;
+		}
+
+		section>h1 {
+			text-align: center;
+			margin-bottom: 20px
+		}
+
+		fieldset {
+			margin-bottom: 25px;
+		}
+
+		legend {
+			color: #09F;
+			font-size: 1.5em;
+			font-weight: 900;
+		}
+		/* 인라인 요소 */
+		p>label{
+			width:120px;
+			display:inline-block;
+		}
+		/* 속성 선택자 css1, 2 -> 낮은브라우저*/
+		input[type="submit"]{
+			background-color: orange;
+			color:#fff;
+			border:none;
+		}
+		input[type="reset"]{
+			background-color: green;
+			color:#fff;
+			border:none
+		}
+		/* 요소[속성명="값"] */
+		input[type="button"]{
+			cursor:pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<section>
+		<h1>새로운 input Type </h1>
+		<form action="#" method="post">
+			<fieldset>
+				<legend>Text 변형</legend>
+				<!-- text -->
+				<p>
+					<label for="userID">아이디</label>
+					<input id="userID" type="text" maxlength="12" 
+					autofocus required autocomplete="off">
+					<span>12자 이내로 해 주세요</span>
+				</p>
+				<p>
+					<label for="userPw">패스워드</label>
+					<input type="password" id="userPw" minlength="6" required>
+					<span>최소 6글자 이내로 해 주세요.</span>
+				</p>
+				<!--search-->
+				<p>
+					<label for="userSearch">검색</label>
+					<input type="search" id="userSearch">
+				</p>
+			</fieldset>
+			<fieldset>
+				<legend>개인정보</legend>
+				<!--tel-->
+				<p>
+					<label for="userTel"> 전화번호1</label>
+					<input type="tel" id="userTel" placeholder="숫자만 입력하세요"></p>
+				<!--tel 2-->
+				<p>
+					<label for="userTel2">전화번호2</label>
+					<input type="tel" id="userTel2" value="02-0000-0000" readonly></p>
+				<!--url-->
+				<p>
+					<label for="userUrl"> 웹사이트주소</label>
+					<input type="url" id="userUrl" placeholder="http://www.ddddd.com"></p>
+				<!--url:2-->
+				<p>
+					<label for="userUrl2">웹사이트주소2</label>
+					<input type="url" id="userUrl2" value="http://www.naver.com" readonly>	</p>
+				<!--email-->
+				<p>
+					<label for="userEmail"> 이메일</label>
+					<input type="email" id="userEmail" placeholder="aaaa@naver.com">	</p>
+			</fieldset>
+			<fieldset>
+				<legend>날짜</legend>
+				<!--date-->
+				<p>
+					<label for="userDate">예약가능일</label>
+					<input type="date" id="userDate" min="2022-04-20" max="2022-10-20" value="2022-04-25">
+				</p>
+				<!--month-->
+				<p>
+					<label for="userMonth">예약 가능달</label>
+					<input type="month" id="userMonth" value="2022-06" min="2022-05" max="2022-12">
+				</p>
+				<!--week-->
+				<p>
+					<label for="userWeek">예약가능주</label>
+					<input type="week" id="userWeek" value="2022-W15" min="2022-W14" max="2022-W30">
+				</p>
+				<!--time-->
+				<p>
+					<label for="userTIme">예약 가능시간</label>
+					<input type="time" id="userTime" value="17:40">
+				</p>
+
+				<!--datetime-local: YYYY-MM-DDTtt:mm-->
+				<p>
+					<label for="userLocal">지역시간대</label>
+					<input type="datetime-local" value="2022-05-05T14:30">
+				</p>
+			</fieldset>
+
+			<fieldset>
+				<legend>숫자</legend>
+				<!--number-->
+				<p>
+					<label for="userAge">연령</label>
+					<!-- 논리가 문제 없어야 함 -->
+					<input type="number" min="1" max="100" value="10" step="10">
+				</p>
+				<!--range-->
+				<p>
+					<label for="userRange">만족도</label>
+					<input type="range" min="0" max="100" value="20" step="20">
+				</p>
+			</fieldset>
+			<fieldset>
+				<legend>선택하기</legend>
+				<!-- radio -->
+				<p>
+					<label>남<input type="radio" name="people" checked></label>
+					<label>여<input type="radio" name="people"></label>
+				</p>
+				<!-- checkbox -->
+				<p>
+					<label>
+						<input type="checkbox">선택1</label>
+					<label>
+						<input type="checkbox" checked>선택2</label>
+					<label>
+						<input type="checkbox">선택3</label>
+					<label>
+						<input type="checkbox">선택4</label>
+				</p>
+			</fieldset>
+
+			<fieldset>
+				<legend>기타</legend>
+				<!--color-->
+				<p>
+					<label for="userColor">선택칼라</label>
+					<input type="color" id="userColor" value="#FFCC00">
+				</p>
+				<!-- 업로드 -->
+				<p>
+					<label for="userPhoto">사진업로드</label>
+					<input type="file" id="userPhoto">
+				</p>
+				<!-- 안보이는 폼의 컨트롤 요소 -->
+				<p>
+					<label for="userHidden">안보이는 컨트롤요소</label>
+					<input id="userHidden" type="hidden" value="새싹회원">
+				</p>
+			</fieldset>
+			<fieldset>
+				<legend>속성사용하기</legend>
+				<p>
+					<label for="disable">disable</label>
+					<input type="text" name="disable" id="disable" disabled value="사용불가능">
+				</p>
+				<p>
+					<label for="readonly">readonly</label>
+					<input type="text" name="readonly" id="readonly" readonly value="읽기가능">
+				</p>
+				<p>
+					<label for="hidden">안보이기</label>
+					<input type="text" name="hidden" id="hidden" hidden value="안보이는 값">
+				</p>
+			</fieldset>
+			<fieldset>
+				<legend>버튼</legend>
+				<!-- 전송 취소 버튼 -->
+				<p><input type="submit" value="전송">
+					<input type="reset" value="취소">
+				</p>
+				<!-- 기타버튼 -->
+				<p>
+					<input type="button" value="일반버튼">
+					<input type="image" src="./img/button.gif" 
+					alt="이미지버튼">
+				</p>
+			</fieldset>
+		</form>
+	</section>
+</body>
+
+</html>
